@@ -132,9 +132,9 @@ namespace instruments
                     {
                         if (songData == "") // If there is no songData, the file is probably a server file. Read it from the abc_server folder
                         {
-                            string abcServerBaseDir = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "abc_server"; // EXTREME todo this is copied from main, make into one thing
+                            string fileLocation = InstrumentModCommon.config.abcServerLocation; // EXTREME todo this is copied from main, make into one thing
 
-                            RecursiveFileProcessor.ReadFile(abcServerBaseDir + Path.DirectorySeparatorChar + songName, ref songData);
+                            RecursiveFileProcessor.ReadFile(fileLocation + Path.DirectorySeparatorChar + songName, ref songData);
                             if (songData == "")  // If songData is still empty, then the song wasn't found (or one wasn't selected)
                                 return;
 

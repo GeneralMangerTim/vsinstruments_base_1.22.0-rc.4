@@ -36,7 +36,8 @@ namespace instruments
         public void StopSound()
         {
             if (sound.IsPlaying)
-                sound.FadeOutAndStop(0.5f);
+                sound.Dispose();
+                //sound.FadeOutAndStop(0);
         }
         public void UpdatePosition(Vec3d position)
         {
